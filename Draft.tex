@@ -1,0 +1,368 @@
+%%% Поля и разметка страницы %%%
+\documentclass[a4paper,12pt]{article}
+\usepackage{lscape}		% Для включения альбомных страниц
+
+%%% Кодировки и шрифты %%%
+\usepackage{cmap}						% Улучшенный поиск русских слов в полученном pdf-файле
+\usepackage[T2A]{fontenc}				% Поддержка русских букв
+\usepackage[utf8]{inputenc}				% Кодировка utf8
+\usepackage[english, russian]{babel}	% Языки: русский, английский
+% \usepackage{pscyr}						% Красивые русские шрифты
+
+%%% Математические пакеты %%%
+\usepackage{amsthm,amsfonts,amsmath,amssymb,amscd} % Математические дополнения от AMS
+
+%%% Оформление абзацев %%%
+%\usepackage{indentfirst} % Красная строка
+
+%%% Цвета %%%
+\usepackage[usenames]{color}
+\usepackage{color}
+\usepackage{colortbl}
+
+%%% Таблицы %%%
+\usepackage{longtable}					% Длинные таблицы
+\usepackage{multirow,makecell,array}	% Улучшенное форматирование таблиц
+
+%%% Общее форматирование
+\usepackage[singlelinecheck=off,center]{caption}	% Многострочные подписи
+\usepackage{soul}									% Поддержка переносоустойчивых подчёркиваний и зачёркиваний
+
+%%% Библиография %%%
+\usepackage{cite} % Красивые ссылки на литературу
+
+%%% Гиперссылки %%%
+\usepackage[plainpages=false,pdfpagelabels=false]{hyperref}
+\definecolor{linkcolor}{rgb}{0.9,0,0}
+\definecolor{citecolor}{rgb}{0,0.6,0}
+\definecolor{urlcolor}{rgb}{0,0,1}
+\hypersetup{
+    colorlinks, linkcolor={linkcolor},
+    citecolor={citecolor}, urlcolor={urlcolor}
+}
+
+%%% Изображения %%%
+\usepackage{graphicx}		% Подключаем пакет работы с графикой
+\graphicspath{{images/}}	% Пути к изображениям
+
+%%% Выравнивание и переносы %%%
+\sloppy					% Избавляемся от переполнений
+\clubpenalty=10000		% Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000		% Запрещаем разрыв страницы после последней строки абзаца
+
+
+\usepackage{tikz}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+\Huge{Домашнее задание по курсу $"$Математическая логика - 2$"$}
+\end{center}
+
+\section{Язык и аксиоматика теории множеств}
+\subsection*{$\S$ 1.3}
+\paragraph*{Условие}
+Доказать, что $\varnothing \not= 	\{ \varnothing \}.$
+\paragraph*{Доказательство}
+По определению\\
+$ x = y \rightleftharpoons \forall t ( t \in x \Leftrightarrow t \in y ).$\\
+Пусть $\varnothing = 	\{ \varnothing \} $,
+$ \Rightarrow \forall t ( t \in \{ \varnothing \} \Leftrightarrow t \in \varnothing )$
+Противоречие для t = $ \varnothing $
+
+\subsection*{$\S$ 1.4}
+\paragraph*{Условие}
+Доказать, что $\{\{1, 2\}, \{2,3\}\} \not= 	\{ 1,2,3 \}. $
+\paragraph*{Доказательство}
+По определению\\
+$ x = y \rightleftharpoons \forall t ( t \in x \Leftrightarrow t \in y ).$\\
+Пусть $\{\{1, 2\}, \{2,3\}\} = 	\{ 1,2,3 \} $,
+$ \Rightarrow \forall t ( t \in \{ 1,2,3 \} \Leftrightarrow t \in \{\{1, 2\}, \{2,3\}\} )$
+Противоречие для t = $ 1 $
+
+\subsection*{$\S$ 1.6}
+\paragraph*{Условие}
+Доказать, что $\exists$ лишь одно множество, не имеющее элементов.
+\paragraph*{Доказательство}
+Пусть $\exists$ два множества X и $X_0$, не имеющих элементов и такие, что $X \not= X_0$\\
+$ \Rightarrow \exists t ( t \in X \Rightarrow  t \not\in X_0 )$\\
+Противоречие так как $\nexists t \in$ X.
+
+\subsection*{$\S$ 1.8}
+\paragraph*{Условие}
+Доказать, что множество всех корней многочлена $\alpha (x)=\beta (x) \gamma (x)$ есть объединение множеств корней $\beta (x)$ и $\gamma(x)$.
+\paragraph*{Доказательство}
+Чтобы докаказать, что множество корней = объединения множеств, надо доказать, что любой корень является либо корнем $\beta (x)$ либо $\gamma(x)$ и что других корней не существует.\\
+1) Пусть существует корень $x_0$, который не является корнем ни $\beta (x)$, ни корнем $\gamma(x)$ \\
+$\Rightarrow \alpha (x_0) = 0, \beta (x_0) \not= 0,  \gamma (x_0) \not= 0$. Противоречие
+2) Пусть $x_0$ корень $\beta (x)$ или  $\gamma(x)$ , тогда  $\beta (x_0) = 0$ или $\gamma(x_0) = 0$ $\Rightarrow \alpha(x_0) = 0$
+
+\subsection*{$\S$ 1.9}
+\paragraph*{Условие}
+Доказать, что персечение множеств действительных корней многочленов  $\alpha (x) и \beta (x)$ с действительными коэффицентами  совпадает с множеством всех действительных корней $\gamma(x) =\alpha^2 (x) + \beta^2 (x)  $.
+\paragraph*{Доказательство}
+Чтобы докаказать, что множество корней = персечение множеств, надо доказать, что любой корень из пересейчения является корнем и что других корней не существует.\\
+1)Если $x_0$ корень $\alpha (x) и \beta (x)$ $\Rightarrow$ $\gamma(x_0) = 0$
+2)Пусть существует корень  $\gamma(x) x_0$, который не является корнем ни $\alpha (x)$, ни корнем $\beta(x)$ \\
+Тогда $\gamma(x_0) = 0$ $\Rightarrow \alpha^2 (x_0) + \beta^2 (x_0) = 0 \Rightarrow  \alpha(x_0) =  0 \& \beta (x_0) = 0$
+
+\subsection*{$\S$ 1.11 (а, г, ж)}
+\paragraph*{Условие}
+Доказать следующие тождества\\
+a)$ A \cup A = A \cap A = A $
+\paragraph*{Доказательство}
+Распишем по определению\\
+$\{ Z \mid (Z \in A \vee Z \in A)\} = \{ Z \in A \cup A \mid Z \in A \wedge Z \in A \} = A $\\
+Упростим\\
+$\{ Z \mid (Z \in A )\} = \{ Z \in A \cup A \mid Z \in A \} = A $ $\Leftrightarrow$ $ A = \{ Z \in A  \mid Z \in A \} = A $  $\Leftrightarrow$ $A=A=A$
+\paragraph*{Условие}
+г)$ A \cap ( B \cap C ) = ( A \cap B ) \cap C$
+\paragraph*{Доказательство} \mbox{}\\
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(45:2cm) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)}
+\begin{tikzpicture}
+	\begin{scope}[shift={(0cm,6cm)}, fill opacity=0.8]
+		\begin{scope}% first circle without the second
+			\clip \secondcircle;
+      		\fill[red] \thirdcircle;
+        \end{scope}
+        \begin{scope}% first circle without the second
+			 \clip \firstcircle;
+      		\clip \secondcircle;
+     		 \fill[green] \thirdcircle;
+        \end{scope}
+        \draw \firstcircle node {$A$};
+        \draw \secondcircle node {$B$};
+        \draw \thirdcircle node {$C$};
+    \end{scope}
+
+	 \begin{scope}[shift={(6cm,6cm)}, fill opacity=0.8]
+	 	\begin{scope}% first circle without the second
+			\clip \firstcircle;
+      		\fill[red] \secondcircle;
+        \end{scope}
+	 	\begin{scope}% first circle without the second
+			 \clip \firstcircle;
+      		\clip \secondcircle;
+     		 \fill[green] \thirdcircle;
+        \end{scope}
+        \draw \firstcircle node {$A$};
+        \draw \secondcircle node  {$B$};
+        \draw \thirdcircle node {$C$};
+    \end{scope}
+\end{tikzpicture}
+
+\paragraph*{Условие}
+ж)$A \cup ( B \cap C ) = ( A \cup B ) \cap ( A \cup C )$
+\paragraph*{Доказательство} \mbox{}\\
+
+\begin{tikzpicture}
+	\begin{scope}[shift={(0cm,6cm)}, fill opacity=0.5]
+		\begin{scope}% first circle without the second
+			\clip \secondcircle;
+      		\fill[red] \thirdcircle;
+        \end{scope}
+        \begin{scope}% first circle without the second
+     		 \fill[green] \firstcircle;
+     		 \clip \secondcircle;
+      		\fill[green] \thirdcircle;
+        \end{scope}
+        
+        \draw \firstcircle node {$A$};
+        \draw \secondcircle node {$B$};
+        \draw \thirdcircle node {$C$};
+    \end{scope}
+
+	 \begin{scope}[shift={(6cm,6cm)}, fill opacity=0.5]
+	 	\begin{scope}% first circle without the second
+	 		\fill[red] \firstcircle;
+	 		\fill[red] \secondcircle;
+        \end{scope}
+        \begin{scope}% first circle without the second
+			\fill[yellow] \firstcircle;
+      		\fill[yellow] \thirdcircle;
+        \end{scope}
+	 	\begin{scope}% first circle without the second
+        \end{scope}
+        \draw \firstcircle node {$A$};
+        \draw \secondcircle node  {$B$};
+        \draw \thirdcircle node {$C$};
+    \end{scope}
+\end{tikzpicture}
+
+\subsection*{$\S$ 1.12(в, д, ж, п, т)}
+
+\subsection*{$\S$ 1.13(а, д, к)}
+
+\subsection*{$\S$ 1.14(в, к)}
+
+\subsection*{$\S$ 1.15}
+\paragraph*{Условие}
+Доказать, что\\
+a) $(A_1 \cup ... \cup A_n) \bigtriangleup (B_1 \cup ... \cup B_n) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_n \bigtriangleup B_n) $
+\paragraph*{Доказательство}
+Докажем по индукции:\\
+\textbf{База индукции}\\
+ n=1)  $(A_1) \bigtriangleup (B_1) \subseteq (A_1 \bigtriangleup B_1) $ (очевидно)\\
+ n=2)  $(A_1 \cup  A_2) \bigtriangleup (B_1 \cup B_2) \subseteq (A_1 \bigtriangleup B_1) \cup (A_2 \bigtriangleup B_2) $(Доказывалось на уроке)\\
+ \textbf{Преположение индукции}\\
+ Пусть верно для $\forall n < k$\\
+ \textbf{Шаг индукции}\\
+ Докажем для k+1\\
+ $(A_1 \cup ... \cup A_k+1) \bigtriangleup (B_1 \cup ... \cup B_k+1) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_k+1 \bigtriangleup B_k+1) $\\
+ пусть $ A_0 = A_1 \cup ... \cup A_k и B_0 = B_1 \cup ... \cup B_k$\\
+ $(A_1 \cup ... \cup A_{k+1}) \bigtriangleup (B_1 \cup ... \cup B_{k+1}) \Leftrightarrow (A_0 \cup A_{k+1}) \bigtriangleup (B_0 \cup B_{k+1}) \subseteq $ \\
+$ \subseteq (A_0 \bigtriangleup B_0) \cup (A_k \bigtriangleup B_k)$\\
+$(A_0 \bigtriangleup B_0) \subseteq  (A_1 \bigtriangleup B_1) \cup ... \cup (A_k \bigtriangleup B_k)$\\
+$\Rightarrow (A_1 \cup ... \cup A_k+1) \bigtriangleup (B_1 \cup ... \cup B_k+1) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_k+1 \bigtriangleup B_k+1) $
+
+\paragraph*{Условие}
+б) $(A_1 \cap ... \cap A_n) \bigtriangleup (B_1 \cap ... \cap B_n) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_n \bigtriangleup B_n) $
+\paragraph*{Доказательство}
+Докажем по индукции:\\
+\textbf{База индукции}\\
+ n=1)  $(A_1) \bigtriangleup (B_1) \subseteq (A_1 \bigtriangleup B_1) $ (очевидно)\\
+ n=2)  $(A_1 \cap  A_2) \bigtriangleup (B_1 \cap B_2) \subseteq (A_1 \bigtriangleup B_1) \cup (A_2 \bigtriangleup B_2) $(Доказывалось на уроке)\\
+ \textbf{Преположение индукции}\\
+ Пусть верно для $\forall n < k$\\
+ \textbf{Шаг индукции}\\
+ Докажем для k+1\\
+ $(A_1 \cap ... \cap A_k+1) \bigtriangleup (B_1 \cap ... \cap B_k+1) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_k+1 \bigtriangleup B_k+1) $\\
+ пусть $ A_0 = A_1 \cap ... \cap A_k и B_0 = B_1 \cap ... \cap B_k$\\
+ $(A_1 \cap ... \cap A_{k+1}) \bigtriangleup (B_1 \cap ... \cap B_{k+1}) \Leftrightarrow (A_0 \cap A_{k+1}) \bigtriangleup (B_0 \cap B_{k+1}) \subseteq $ \\
+$ \subseteq (A_0 \bigtriangleup B_0) \cup (A_k \bigtriangleup B_k)$\\
+$(A_0 \bigtriangleup B_0) \subseteq  (A_1 \bigtriangleup B_1) \cup ... \cup (A_k \bigtriangleup B_k)$\\
+$\Rightarrow (A_1 \cap ... \cap A_k+1) \bigtriangleup (B_1 \cap ... \cap B_k+1) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_k+1 \bigtriangleup B_k+1) $\\
+
+\subsection*{$\S$ 1.17}
+\paragraph*{Условие}
+Определить операции $ \cup,  \cap,  \setminus$, через:\\
+a)$\bigtriangleup, \cap$
+\paragraph*{Доказательство} \mbox{}\\
+$\cap = \cap $\\
+$ A \cup B = (A \bigtriangleup B) \bigtriangleup ( A \cap B)$\\
+$ A \setminus B =  (A \bigtriangleup B) \cap A$
+\paragraph*{Условие}
+б)$\bigtriangleup, \cup$
+\paragraph*{Доказательство} \mbox{}\\
+$\cup = \cup $\\
+$ A \cap B = ((A \cup B) \bigtriangleup A) \bigtriangleup B $\\
+$ A \setminus B =  (A \cup B) \bigtriangleup B$
+\paragraph*{Условие}
+и)$\setminus, \bigtriangleup$
+\paragraph*{Доказательство} \mbox{}\\
+$ A \cup B = (A \setminus B) \bigtriangleup $\\
+$ A \cap B = (B \setminus (A \setminus B)) $\\
+$ \setminus =  \setminus$
+
+\subsection*{$\S$ 1.18}
+\paragraph*{Условие}
+Доказать, что нельзя определить:\\
+a) $\setminus$ через $\cap$ и $\cup $\\
+б) $\cup$ через $\cap$ и $\setminus $
+
+\subsection*{$\S$ 1.20}
+\paragraph*{Условие}
+Найти все подмножества множеств:$\varnothing, \{ \varnothing \}, \{ x \}, \{1, 2\}. $
+\paragraph*{Ответ} \mbox{}\\
+$\varnothing $ - нет\\
+$\{ \varnothing \} - \varnothing$\\ 
+$\{ x \} - \varnothing, \{x\}$\\
+$\{1, 2\} - \varnothing, \{1\}, \{2\}, \{1, 2\}$
+
+\subsection*{$\S$ 2.1}
+\paragraph*{Условие}
+Доказать, что существуют A, B и C такие, что:\\
+а) $A \times B \neq B \times A$
+\paragraph*{Решение} \mbox{}\\
+$A = {1}$ и $B = {2}$ 
+\paragraph*{Условие}
+б) $A \times (B \times С) \neq (A \times B) \times C$
+\paragraph*{Решение} \mbox{}\\
+
+\subsection*{$\S$ 2.3}
+\paragraph*{Условие}
+Доказать, что если A, B, C и D не пусты, то:\\
+а) $A \subseteq B$ и $ C \subseteq D $ $\Leftrightarrow A \times C \subseteq B \times D$
+б) $A = B$ и $ C = D $ $\Leftrightarrow A \times C = B \times D$
+\paragraph*{Решение} \mbox{}\\
+Очеивдно доказывается методом от противного.
+
+\subsection*{$\S$ 2.6(а, б, г)}
+\paragraph*{Условие}
+Доказать, что:
+a) $ ( A \cup B ) \times C = ( A \times B ) \cup ( B \times C ) $
+б) $ A \times ( B \cup C ) = ( A \times B ) \cup ( A \times C ) $
+г) $ ( A \setminus B ) \times C = ( A \times C ) \setminus ( B \times C ) $
+\paragraph*{Решение} \mbox{}\\
+
+\section{Отношения и функции}
+\subsection*{$\S$ 2.8(а, в)}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.9(а, в)}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.12 (б, г)}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.13}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.14}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.22}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.25(а-д)}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.31(а)}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.32(а)}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.34}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.35}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 2.38(а, в, д)}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\section{Мощности множеств}
+\subsection*{$\S$ 4.1}
+\paragraph*{Условие}
+Доказать, что:\\
+$ A \backsim A $ (рефлексивность)\\
+Если $ A \backsim B $, то $ B \backsim A $ (симметричность)\\
+Если $ A \backsim B $ и $ B \backsim С $, то $ A \backsim С $(транзетивность)\\
+\paragraph*{Решение}
+
+\subsection*{$\S$ 4.5}
+\paragraph*{Условие}
+Доказать, что:\\
+а) Всякое подмножество конечного множества конечно\\
+б) Объединение конечного числа конечных множест кончено\\
+в) Прямое произведение конечного числа конечных множеств конечно\\
+\paragraph*{Решение}
+Доказательство от противного 
+
+\end{document}
