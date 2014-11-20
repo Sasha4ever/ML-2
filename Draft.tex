@@ -1,15 +1,5 @@
 %%% Поля и разметка страницы %%%
 \documentclass[a4paper,12pt]{article}
-
-
-\textwidth=175mm
-\textheight=260mm
-\oddsidemargin=-.4mm
-\headsep=5mm
-
-\topmargin=-1in
-\unitlength=1mm
-
 \usepackage{lscape}		% Для включения альбомных страниц
 
 %%% Кодировки и шрифты %%%
@@ -22,9 +12,6 @@
 %%% Математические пакеты %%%
 \usepackage{amsthm,amsfonts,amsmath,amssymb,amscd} % Математические дополнения от AMS
 
-%%% Оформление абзацев %%%
-%\usepackage{indentfirst} % Красная строка
-
 %%% Цвета %%%
 \usepackage[usenames]{color}
 \usepackage{color}
@@ -32,7 +19,7 @@
 
 %%% Таблицы %%%
 \usepackage{longtable}					% Длинные таблицы
-\usepackage{multirow,makecell,array}	% Улучшенное форматирование таблиц
+\usepackage{multirow,makecell,array}		% Улучшенное форматирование таблиц
 
 %%% Общее форматирование
 \usepackage[singlelinecheck=off,center]{caption}	% Многострочные подписи
@@ -62,8 +49,6 @@
 
 
 \usepackage{tikz}
-
-\graphicspath{ {./} }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -289,9 +274,9 @@ $\{1, 2\} - \varnothing, \{1\}, \{2\}, \{1, 2\}$
 Доказать, что существуют A, B и C такие, что:\\
 а) $A \times B \neq B \times A$
 \paragraph*{Решение} \mbox{}\\
-$A = {1}$ и $B = {2}$ 
+$A = \{1\}$ и $B = \{2\}$, так как, пользуясь определением упорядоченной пары: $ (\{1\},\{2\}) = \{\{1\},\{1,2\}\} \ne \{\{2\},\{2,1\}\} = (\{2\},\{1\})$. 
 \paragraph*{Условие}
-б) $A \times (B \times С) \neq (A \times B) \times C$
+б) $A \times (B \times C) \neq (A \times B) \times C$
 \paragraph*{Решение} \mbox{}\\
 
 \subsection*{$\S$ 2.3}
@@ -304,29 +289,83 @@ $A = {1}$ и $B = {2}$
 
 \subsection*{$\S$ 2.6(а, б, г)}
 \paragraph*{Условие}
-Доказать, что:
-a) $ ( A \cup B ) \times C = ( A \times B ) \cup ( B \times C ) $
-б) $ A \times ( B \cup C ) = ( A \times B ) \cup ( A \times C ) $
+Доказать, что:\\
+a) $ ( A \cup B ) \times C = ( A \times B ) \cup ( B \times C ) $\\
+б) $ A \times ( B \cup C ) = ( A \times B ) \cup ( A \times C ) $\\
 г) $ ( A \setminus B ) \times C = ( A \times C ) \setminus ( B \times C ) $
 \paragraph*{Решение} \mbox{}\\
 
 \section{Отношения и функции}
 \subsection*{$\S$ 2.8(а, в)}
 \paragraph*{Условие}
+Найти $\delta_R$, $\rho_R$, $R^{-1}$, $R\cdot R$, $R\cdot R^{-1}$, $R^{-1}\cdot R$ для следующих отношений:\\
+(а) $R=\{(x,y)|x,y\in \mathbb{N}$ и $x$ делит $y$\}; \\
+(в) $R=\{(x,y)|x,y\in \mathbb{D}$ и $x+y\leqslant 0\}$. 
 \paragraph*{Решение}
+(а) Это отношение - всюдуопределенное, так как для любого $x$ существует $y=x$, для которого $x$ делит $y$ $\Rightarrow$ $\delta_R=Pr_1(R)=\mathbb{N}$.\par
+Аналогично это отношение - всюдузначное. $\Rightarrow$ $\rho_R=Pr_2(R)=\mathbb{N}$.\par
+$R^{-1} = \{(x,y)|(y,x)\in R\} = \{(x,y)|x,y \in \mathbb{N}$ и $y$ делит $x\}$.
+\begin{gather*}
+R\cdot R \rightleftharpoons \{t\in \mathbb{N}\times \mathbb{N} | \exists u=(u_1,u_2) \exists v=(v_1,v_2) (u\in R\  \& \ v\in R \ \& \ pr_1(t)=\\
+= pr_1(u) \ \& \ pr_2(u)=pr_1(v) \ \& \ pr_2(v)=pr_2(t))\}\sim\\
+\sim \{(x,y)|x,y\in \mathbb{N} \ \& \ \exists u \exists v (u_2\vdots u_1  \& \ v_2\vdots v_1 \ \& \ x=u_1 \ \& \ u_2 = v_1 \ \& \ v_2 = y)\} \sim \\
+\sim \{(x,y)|x,y\in \mathbb{N} \ \& \ y\vdots x\} \Rightarrow R\cdot R = R.
+\end{gather*}
+(так как $v_2=y\vdots v_1=u_2\vdots u_1=x$, значит $x$ должен делить $y$)
+\begin{gather*}
+R\cdot R^{-1} \rightleftharpoons \{t\in \mathbb{N}\times \mathbb{N} | \exists u=(u_1,u_2) \exists v=(v_1,v_2) (u\in R\  \& \ v\in R^{-1} \ \& \ pr_1(t)=\\
+= pr_1(u) \ \& \ pr_2(u)=pr_1(v) \ \& \ pr_2(v)=pr_2(t))\}\sim\\
+\sim \{(x,y)|x,y\in \mathbb{N} \ \& \ \exists u \exists v (u_2\vdots u_1  \& \ v_1\vdots v_2 \ \& \ x=u_1 \ \& \ u_2 = v_1 \ \& \ v_2 = y)\} \sim \\
+\sim \{(x,y)|x,y\in \mathbb{N}\} \Rightarrow R\cdot R^{-1} = \mathbb{N}\times \mathbb{N}
+\end{gather*}
+(так как $u_2=v_1\vdots v_2=y$ и $u_2\vdots u_1=x$, то можно взять в качетстве $u_2$ число, делящееся и на $x$, и на $y$, а сами $x$ и $y$ связаны не будут. Значит, нет дополнительных условий на упорядоченную пару $(x,y)$)
+\begin{gather*}
+R^{-1}\cdot R \rightleftharpoons \{t\in \mathbb{N}\times \mathbb{N} | \exists u=(u_1,u_2) \exists v=(v_1,v_2) (u\in R^{-1}\  \& \ v\in R \ \& \ pr_1(t)=\\
+= pr_1(u) \ \& \ pr_2(u)=pr_1(v) \ \& \ pr_2(v)=pr_2(t))\}\sim\\
+\sim \{(x,y)|x,y\in \mathbb{N} \ \& \ \exists u \exists v (u_1\vdots u_2  \& \ v_2\vdots v_1 \ \& \ x=u_1 \ \& \ u_2 = v_1 \ \& \ v_2 = y)\} \sim \\
+\sim \{(x,y)|x,y\in \mathbb{N}\} \Rightarrow R^{-1}\cdot R = \mathbb{N}\times \mathbb{N}
+\end{gather*}
+(так как $x=u_1\vdots u_2=v_1$ и $v_2=y\vdots v_1$, то можно взять в качетстве $v_1$ число~$1$, на которое делится и $x$, и $y$, а сами $x$ и $y$ связаны не будут. Значит, нет дополнительных условий на упорядоченную пару $(x,y)$)\\
 
+\bigskip
+
+(в) Это отношение - всюдуопределенное, так как для любого $x$ существует $y=-x$, для которого $x+y\leqslant 0$ $\Rightarrow \delta_R = Pr_1(R) = \mathbb{D}$.\par
+Аналогично это отношение - всюдузначное. $\Rightarrow$ $\rho_R=Pr_2(R)=\mathbb{D}$.\par
+$R^{-1} = \{(x,y)|(y,x)\in R\} = R$, так как отношение - симметричное.
+\begin{gather*}
+R\cdot R \rightleftharpoons \{t\in \mathbb{D}\times \mathbb{D} | \exists u=(u_1,u_2) \exists v=(v_1,v_2) (u\in R\  \& \ v\in R \ \& \ pr_1(t)=\\
+= pr_1(u) \ \& \ pr_2(u)=pr_1(v) \ \& \ pr_2(v)=pr_2(t))\}\sim\\
+\sim \{(x,y)|x,y\in \mathbb{D} \ \& \ \exists u \exists v (u_1+u_2\leqslant 0\ \& \ v_1+v_2\leqslant 0 \ \& \ x=u_1 \ \& \ u_2 = v_1 \ \& \ v_2 = y)\} \sim \\
+\sim \{(x,y)|x,y\in \mathbb{D}\} \Rightarrow R\cdot R = \mathbb{D}\times \mathbb{D}.
+\end{gather*}
+(условие на $x$, $y$: $x+v_1\leqslant 0$ и $v_1+y\leqslant 0$, но всегда можно взять $v_1$ таким, что оба условия будут выполняться)\par
+В силу симметричности отношения $R\cdot R^{-1} = R^{-1}\cdot R = R\cdot R = \mathbb{D}\times \mathbb{D}$.
 \subsection*{$\S$ 2.9(а, в)}
 \paragraph*{Условие}
+Доказать, что:\\
+(а) $\delta_R = \varnothing \Leftrightarrow R=\varnothing \Leftrightarrow \rho_R=\varnothing$;\\
+(в) $\delta_{R_1\cdot R_2} = R_1^{-1} (\rho_{R_1} \cap \delta_{R_2})$.
 \paragraph*{Решение}
+(а) $\delta_R = \varnothing \Leftrightarrow \forall u \in  \cup \cup R$ $\forall v$ $(u,v)\notin R$ $\Leftrightarrow R=\varnothing$\par
+$\rho_R = \varnothing \Leftrightarrow \forall v \in \cup \cup R$ $\forall u$ $(u,v)\notin R$ $\Leftrightarrow R=\varnothing$\par
 
+\bigskip
+
+(в) $x\in \delta_{R_1\cdot R_2} \Leftrightarrow \exists y:$ $(x,y)\in R_1\cdot R_2$
+ $\Leftrightarrow \exists y: \exists u \exists v (u\in R_1 \ \& \ v\in R_2 \ \& \ x=u_1 \ \& \ u_2 = v_1 \ \& \ v_2 = y)$ $\Leftrightarrow$ $\exists y \exists z=u_2=v_1: (x=u_1,z)\in~R_1) \ \& \ (z,y=v_2)\in R_2$ $\Leftrightarrow$ $\exists z: (x,z)\in R_1$ $\&$ $z\in \delta_{R_2}$ $\Leftrightarrow$ $\exists z: (z,x)\in R_1^{-1}$ $\&$ $z\in \rho_{R_1}$ $\&$ $z\in \delta_{R_2}$ $\Leftrightarrow$ $x\in R_1^{-1} (\rho_{R_1} \cap \delta_{R_2})$.
 \subsection*{$\S$ 2.12 (б, г)}
 \paragraph*{Условие}
+Доказать, что для любых бинарных отношений:\\
+(б) $(R^{-1})^{-1} = R$; \\
+(г) $(R_1 \cap R_2)^{-1} = R_1^{-1} \cap R_2^{-1}$.
 \paragraph*{Решение}
-
 \subsection*{$\S$ 2.13}
 \paragraph*{Условие}
+Для каких бинарных отношений $R$ справедливо $R^{-1} = -R$? 
 \paragraph*{Решение}
-
+Пусть $R \subseteq A\times B$. \\
+(1) Предположим, что $x\in A \cap B$. Тогда $(x,x) \in R \Leftrightarrow (x,x) \in R^{-1}$. Если $R^{-1} = -R$, то получим, что $(x,x)$ лежит и в отношении, и в его дополнении, чего быть не может.\\
+(2) Значит, $A \cap B=\varnothing$. По определению $R \subseteq A\times B$, $R^{-1} \subseteq B\times A$. Значит, $-R=R^{-1}=\varnothing$. Получим, что $R=\varnothing$ и $R=A\times B$, что возможно только при $A=B=\varnothing$. 
 \subsection*{$\S$ 2.14}
 \paragraph*{Условие}
 \paragraph*{Решение}
@@ -365,7 +404,7 @@ a) $ ( A \cup B ) \times C = ( A \times B ) \cup ( B \times C ) $
 Доказать, что:\\
 $ A \backsim A $ (рефлексивность)\\
 Если $ A \backsim B $, то $ B \backsim A $ (симметричность)\\
-Если $ A \backsim B $ и $ B \backsim С $, то $ A \backsim С $(транзетивность)
+Если $ A \backsim B $ и $ B \backsim С $, то $ A \backsim С $(транзетивность)\\
 \paragraph*{Решение}
 
 \subsection*{$\S$ 4.5}
@@ -373,86 +412,8 @@ $ A \backsim A $ (рефлексивность)\\
 Доказать, что:\\
 а) Всякое подмножество конечного множества конечно\\
 б) Объединение конечного числа конечных множест кончено\\
-в) Прямое произведение конечного числа конечных множеств конечно
-\paragraph*{Доказательство}\mbox{}\\
+в) Прямое произведение конечного числа конечных множеств конечно\\
+\paragraph*{Решение}
 Доказательство от противного 
-
-\subsection*{$\S$ 4.8}
-\paragraph*{Условие}
-Доказать, что множество тогда и только тогда бесконечно, когда оно эквивалентно некоторому своему подмножеству.
-\paragraph*{Доказательство}\mbox{}\\
-В условие имеется введу, подмножество не равное множетсву, тк иначе есть контрпример.\\
-$\{1\}$ эквивалентен $\{1\}$\\
-Докажем лемму о том, что счетное множество $ A \sim A \setminus B $, где В конечное множество.\\
-A - счетное, значит все его элементы можно пронумеровать. \\
-Возьмем множество  $A \setminus B $, его мы тоже можем пронумеровать, сдвигая каждый раз нумерацию.\\
-\\
-$\Rightarrow ) $ Еслим множество бесконечно, то в нем есть счетное подмножество $\Rightarrow$ $\exists$ подмножетсво нашего счетного множества, которое ему  $ \sim $\\
-$\Leftarrow )$ Если мноетсво $ \sim $ свое подмножеству, то оно не может быть конечным, доказывается от противного $\Rightarrow$ оно бесконечно.
-
-\subsection*{$\S$ 4.10 а}
-\paragraph*{Условие}
-Пусть область определения счета, доказать, что область значений этой функции конечна или счетна. \paragraph*{Доказательство}\mbox{}\\
-Докажем, что она не более чем счетна.\\
-Тк область определения счетна, а каждой точки из области оперделения можно поставить в соотвествие значение функции в этой точки $\Rightarrow$ область значений не более чем счетна $\Rightarrow$ область значений этой функции конечна или счетна.\\
-
-\subsection*{$\S$ 4.13}
-\paragraph*{Условие}
-Доказать, что:\\
-a) Если A бескончено и B - конечное или счетное множество, то $ A \cup B \sim A$
-\paragraph*{Доказательство}
-Рассмотрим 2 варианта A счетно и A не счетно.\\
-Докажем от противного, что в каждом из этих случаях $A \cup B$ счетно и $A \cup B$  не счетно соответственно.
-\paragraph*{Условие}
-б) Если A бескончено и несчетно, B конечное или счетное множество, то $ A \setminus B \sim A$
-\paragraph*{Доказательство}
-Пусть это не так $\Rightarrow A \setminus B$ - счетно или конечно. Доказываем от противного, что это невозможно.
-
-\subsection*{$\S$ 4.15}
-\paragraph*{Условие}
-Доказать, что:\\
-a) Множество целых чисел счетно
-\paragraph*{Доказательство}
-пронумеруем 
-\begin{center}
-  \begin{tabular}{ | l | c | c| c| c| c| c| c| c }
-    \hline
-    1 & 2 & 3  & 4 & 5  & 6 & 7  & 8 & ...\\ \hline
-    0 & 1 & -1 & 2 & -2 & 3 & -3 & 4 & ...\\ \hline
-  \end{tabular}
-\end{center}
-\paragraph*{Условие}
-б) Множество рациональных чисел счетно
-\paragraph*{Доказательство}
-пронумеруем\\
-\begin{center}
-    \includegraphics[scale=0.5]{image008.jpg}
-\end{center}
-\paragraph*{Условие}
-в) Множество рациональных чисел сегмента $\left[ a, b\right] $ счетно при a < b
-\paragraph*{Доказательство}
-Множество рациональных чисел сегмента $\left[ a, b\right] $ - беконечно. (тк множество плотно)\\
-$\Rightarrow$ оно не менее чем счетно. Но по доказанному выше оно не более, чем счетно $\Rightarrow$ счетно.
-\paragraph*{Условие}
-г) Множество пар $ \left\langle  x, y \right\rangle $, где х и у - рациональные числа, счетно
-\paragraph*{Доказательство}
-Множество рациональных чисел счетно.\\
-Тогда выпишем все рациональный числа сеткой и докажем, что кол-во пар сечтно аналогично доказатульству 4.15 б\\
-
-\subsection*{$\S$ 4.16}
-\paragraph*{Условие}
-Доказать, что множество всех конечных последовательностей, составленных из элементов некотрого счетного множества, есть счетное множество.
-\paragraph*{Доказательство}
-Докажем, что множество последовательностей длины n счетно.\\
-Используя 4.15 Г мы знаем, что счетно * счетно = счетно \\
-$ \Rightarrow $ счетное$^{n} $ = счетное.\\
-Кол-во последовательностей конченой длиный счетно $\Rightarrow$ множество всех последедовательностей конечной длинны тоже счетно.
-
-
-\subsection*{$\S$ 4.18}
-\paragraph*{Условие}
-Доказать, что множество многочленов от одной переменной с целыми коэффицентами счетно.
-\paragraph*{Доказательство}
-Многочлен от одной переменно с целыми коэффицентами представляет из себя конечную последовательных целых чисел $\Rightarrow$ сводится к задаче 4.16
 
 \end{document}
