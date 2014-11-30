@@ -355,6 +355,8 @@ R\cdot R \rightleftharpoons \{t\in \mathbb{D}\times \mathbb{D} | \exists u=(u_1,
 \end{gather*}
 (условие на $x$, $y$: $x+v_1\leqslant 0$ и $v_1+y\leqslant 0$, но всегда можно взять $v_1$ таким, что оба условия будут выполняться)\par
 В силу симметричности отношения $R\cdot R^{-1} = R^{-1}\cdot R = R\cdot R = \mathbb{D}\times \mathbb{D}$.
+
+
 \subsection*{$\S$ 2.9(а, в)}
 \paragraph*{Условие}
 Доказать, что:\\
@@ -368,50 +370,121 @@ $\rho_R = \varnothing \Leftrightarrow \forall v \in \cup \cup R$ $\forall u$ $(u
 
 (в) $x\in \delta_{R_1\cdot R_2} \Leftrightarrow \exists y:$ $(x,y)\in R_1\cdot R_2$
  $\Leftrightarrow \exists y: \exists u \exists v (u\in R_1 \ \& \ v\in R_2 \ \& \ x=u_1 \ \& \ u_2 = v_1 \ \& \ v_2 = y)$ $\Leftrightarrow$ $\exists y \exists z=u_2=v_1: (x=u_1,z)\in~R_1) \ \& \ (z,y=v_2)\in R_2$ $\Leftrightarrow$ $\exists z: (x,z)\in R_1$ $\&$ $z\in \delta_{R_2}$ $\Leftrightarrow$ $\exists z: (z,x)\in R_1^{-1}$ $\&$ $z\in \rho_{R_1}$ $\&$ $z\in \delta_{R_2}$ $\Leftrightarrow$ $x\in R_1^{-1} (\rho_{R_1} \cap \delta_{R_2})$.
+ 
 \subsection*{$\S$ 2.12 (б, г)}
 \paragraph*{Условие}
 Доказать, что для любых бинарных отношений:\\
-(б) $(R^{-1})^{-1} = R$; \\
-(г) $(R_1 \cap R_2)^{-1} = R_1^{-1} \cap R_2^{-1}$.
+б) $(R^{-1})^{-1} = R$; \\
+г) $(R_1 \cap R_2)^{-1} = R_1^{-1} \cap R_2^{-1}$.
 \paragraph*{Решение}
+
 \subsection*{$\S$ 2.13}
 \paragraph*{Условие}
 Для каких бинарных отношений $R$ справедливо $R^{-1} = -R$?
 \paragraph*{Решение}
 Пусть $R \subseteq A\times B$. \\
-(1) Предположим, что $x\in A \cap B$. Тогда $(x,x) \in R \Leftrightarrow (x,x) \in R^{-1}$. Если $R^{-1} = -R$, то получим, что $(x,x)$ лежит и в отношении, и в его дополнении, чего быть не может.\\
-(2) Значит, $A \cap B=\varnothing$. По определению $R \subseteq A\times B$, $R^{-1} \subseteq B\times A$. Значит, $-R=R^{-1}=\varnothing$. Получим, что $R=\varnothing$ и $R=A\times B$, что возможно только при $A=B=\varnothing$.
+1) Предположим, что $x\in A \cap B$. Тогда $(x,x) \in R \Leftrightarrow (x,x) \in R^{-1}$. Если $R^{-1} = -R$, то получим, что $(x,x)$ лежит и в отношении, и в его дополнении, чего быть не может.\\
+2) Значит, $A \cap B=\varnothing$. По определению $R \subseteq A\times B$, $R^{-1} \subseteq B\times A$. Значит, $-R=R^{-1}=\varnothing$. Получим, что $R=\varnothing$ и $R=A\times B$, что возможно только при $A=B=\varnothing$.
+
 \subsection*{$\S$ 2.14}
 \paragraph*{Условие}
+Пусть $A$ и $B$ - конечные множества, состоящие из $m$ и $n$ элементов соответственно.\\
+а) Сколько существует бинарных отношений между элементами множеств $A$ и $B$?\\
+б) Сколько имеется функций из $A$ в $B$?\\
+в) Сколько имеется 1-1-функций из $A$ в $B$?\\
+г) При каких $m$ и $n$ существует взаимно однозначное соответствие между $A$ и $B$?
 \paragraph*{Решение}
+а) Столько, сколько подмножеств у множества упорядоченных пар элементов $A$ и $B$. Всего пар $mn$,  бинарных отношений $2^{mn}$. \\
+б) Функция по определению - это всюдуопределенное прямое однозначное бинарное отношение, то есть каждый элемент множества $A$ (из $m$ штук) входит в отношение ровно с одним элементом множества $B$ (из $n$ штук). Тогда всего функций $\underbrace{n\cdot \ldots \cdot n}_m = n^m$. \\
+в) Функция $f$ называется 1-1-функцией, если $\forall x_1,x_2,y$: $y=f(x_1)$, $y=f(x_2)\Rightarrow x_1=x_2$. Если $n<m$, то не существует ни одной такой функции, так как не для всех элементов множества $A$ найдется элемент $B$, входящий с ним в отношение. Если $n\geqslant m$, то число таких функций равно $n(n-1)(n-2)\cdot \ldots \cdot (n-m+1)$, так как выбор каждой новой "пары" для элемента множества $A$ уменьшает на $1$ количество возможных пар для прочих элементов множества $A$.\\
+г) При $m=n$, тогда и только тогда каждый элемент множества $A$ сможет входить в отношение ровно с одним элементом множества $B$ и наоборот.
 
 \subsection*{$\S$ 2.22}
 \paragraph*{Условие}
+Доказать, что если $f$ есть функция из $A$ в $B$ и $g$ есть функция из $B$ в $C$, то $f\cdot g$ есть функция из $A$ в $C$. (????Имелось в виду $g\cdot f$ - функция из $A$ в $C$????)
 \paragraph*{Решение}
+$g\cdot f \leftrightharpoons \{t\in Pr_1(f)\times Pr_2(g)| ...\}$. $Pr_1(f)=A$, $Pr_2(g)=C$ $\Rightarrow$ $g \cdot f: A\to C$. 
+
 
 \subsection*{$\S$ 2.25(а-д)}
 \paragraph*{Условие}
+Доказать, что можно установить взаимно однозначное соответствие между множествами:\\
+а) $A\times B$ и $B\times A$;\\
+б) $A\times (B\times C)$ и $(A\times B)\times C$;\\
+в) $(A\times B)^C$ и $A^C\times B^C$;\\
+г) $(A^B)^C$ и $A^{B\times C}$;\\
+д) $A^{B\cup C}$ и $A^B\times A^C$, если $B\cap C = \varnothing$.
 \paragraph*{Решение}
+а) Предъявим это соответствие: $\forall x\in A$, $y\in B:$ $(x,y)~\in~A~\times~B \leftrightarrow (y,x)\in B\times A$, то есть любой упорядоченной паре из первого векторного произведения соответствует ровно одна из второго и наоборот.\\
+б)
 
 \subsection*{$\S$ 2.31(а)}
 \paragraph*{Условие}
+Доказать, что для любой функции $f$: \\
+а) $f(A\cup B) = f(A)\cup f(B)$.
 \paragraph*{Решение}
+\begin{gather*}
+f[A\cup B] = \{y\in Pr_2(f)|\exists x(x\in A\cup B \ \& \ (x,y)\in f)\} \\
+\exists x(x\in A\cup B\ \& \ (x,y)\in f) \sim \exists x(x\in A \vee x\in B \ \& \ (x,y)\in f)  \sim \\
+\sim \exists x(x\in A \ \& \ (x,y)\in f) \vee (x\in B \ \& \ (x,y)\in f)
+\end{gather*}
+Значит, $f[A\cup B] = f[A] \cup f[B]$.
 
 \subsection*{$\S$ 2.32(а)}
 \paragraph*{Условие}
+Доказать, что для любой функции $f$: \\
+а) $f(A\cap B) \subseteq f(A) \cap f(B)$.
 \paragraph*{Решение}
+\begin{gather*}
+f[A\cap B] = \{y\in Pr_2(f)|\exists x (x\in A\cap B \ \& \ (x,y)\in f)\} \\
+\exists x(x\in A\cap B \ \& \ (x,y)\in f) \sim \exists x(x\in A \ \& \ x\in B \ \& \ (x,y)\in f) \Rightarrow \\
+\Rightarrow \exists x(x\in A \ \&\ (x,y)\in f) \ \& \ (x\in B \ \& \ (x,y)\in f)
+\end{gather*}
+Значит, $f(A\cap B) \subseteq f(A) \cap f(B)$.
 
 \subsection*{$\S$ 2.34}
 \paragraph*{Условие}
+Доказать, что $f(A)\setminus f(B) \subseteq f(A\setminus B)$ для любой функции $f$. 
 \paragraph*{Решение}
+\begin{gather*}
+f[A]\setminus f[B] = \{y\in Pr_2(f)|\exists x(x\in A\ \& \ (x,y)\in f)\ \& \ \neg \exists x( x\in B \ \& \ (x,y)\in f)\}.\\
+\exists x(x\in A\ \& \ (x,y)\in f)\ \& \ \forall x \neg ( x\in B \ \& \ (x,y)\in f) \Rightarrow \\ \Rightarrow \exists x(x\in A\ \& \ (x,y)\in f)\ \& \  ( x\notin B \vee (x,y)\notin f) \sim \\
+\sim \exists x (x\in A \ \& \ x\notin B \ \& \ (x,y)\in f).
+\end{gather*}
+Значит, $f[A]\setminus f[B] \subseteq f[A\setminus B]$.
 
 \subsection*{$\S$ 2.35}
 \paragraph*{Условие}
+Доказать, что если в предыдущем примере $f$ есть 1-1-функция, то выполняется равенство.
 \paragraph*{Решение}
-
+Пусть $f$ является 1-1-функцией, то есть $\forall x_1,x_2,y: y~=~f(x_1), y~=~f(x_2) \Rightarrow x_1=x_2$. Включение в одну сторону доказано в предыдущей задаче. \\
+$y\in f(A\setminus B) \Rightarrow \exists ! x\in A\setminus B: y=f(x) \Rightarrow y\in f(A)$. Так как для  элемента $y$ образа существует единственный прообраз, то $\forall z\in B f(z)\ne y$ (потому что элемент $x$ такой, что $f(x)=y$, лежит в $A\setminus B$, значит, не лежит в $B$). $\Rightarrow y\notin f(B)$ $\Rightarrow y\in f(A)\setminus f(B)$ $\Rightarrow$ $f(A\setminus B) \subseteq f(A)\setminus f(B)$.\\
+Вместе с результатом предыдущей задачи получаем:\\
+ $f(A)\setminus f(B) = f(A\setminus B)$.
+ 
 \subsection*{$\S$ 2.38(а, в, д)}
 \paragraph*{Условие}
+Доказать следующие тождества для любой функции $f$:\\
+а) $f^{-1} (A\cup B) = f^{-1} (A) \cup f^{-1} (B)$; \\
+в) $f^{-1} (A\cap B) = f^{-1} (A) \cap f^{-1} (B)$; \\
+д) $f^{-1} (A\setminus B) = f^{-1} (A)\setminus f^{-1}(B)$.
 \paragraph*{Решение}
+а)
+\begin{gather*}
+f^{-1} \leftrightharpoons \{t\in Pr_2(f)\times Pr_1(f)|f(pr_2(t)) = pr_1(t) \}, \\
+f^{-1}[A\cup B] \leftrightharpoons \{v\in Pr_2(f^{-1})|\exists p(p\in A\cup B) \ \& \ (p,v) \in f^{-1}\} \sim \\
+\sim \{v\in Pr_1(f)|\exists p(p\in A\cup B) \ \& \ f(v) = p\} \sim \\
+\sim \{v\in Pr_1(f)|\exists p(p\in A \vee p\in B) \ \& \ f(v)=p \}\sim \\
+\sim \{v\in Pr_1(f)|\exists p(p\in A) \vee \exists p(p\in B): f(v)=p\} \Rightarrow f^{-1}[A\cup B] = f^{-1}[A] \cup f^{-1}[B].
+\end{gather*}
+\paragraph*{Условие}
+в) $f^{-1} (A\cap B) = f^{-1} (A) \cap f^{-1} (B)$; \\
+\paragraph*{Решение}
+\begin{gather*}
+f^{-1}[A\cap B] \leftrightharpoons \{v\in Pr_2(f^{-1})|\exists p(p\in A\cap B) \ \& \ (p,v) \in f^{-1}\}\\
+\exists p(p\in A\cap B) \ \& \ ((p,v) \in f^{-1}) \sim \exists p(p\in A \ \& \ p\in B) \ \& \ ((p,v) \in f^{-1}) \sim \\
+\sim \exists p(p\in A) \ \& \ ((p,v) \in f^{-1}) \ \& \ (p\in B)  \Rightarrow f^{-1}[A\cap B] = f^{-1}[A] \cap f^{-1}[B]
+\end{gather*}
 
 \section{Мощности множеств}
 \subsection*{$\S$ 4.1}
@@ -586,6 +659,84 @@ $x \leftrightarrow 1/2 - \mid 1/2 - x \mid$ (симметрично отнаси
 Но $ \mathbb{R} $ более чем счетно, а множество всех алгебраических чисел счетно\\
 $\Rightarrow$ существуют неалгебраические числа.
 
+\subsection*{$\S$ 4.36}
+\paragraph*{Условие}
+\paragraph*{Решение}
 
+\subsection*{$\S$ 4.38}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 4.39}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 4.42}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\section{Отношение эквивелентности}
+\subsection*{$\S$ 3.6}
+\paragraph*{Условие}
+Построить бинарное отношение\\
+a)рефлексивное, симметричное, не транзитивное\\
+\paragraph*{Решение}
+a - нормированное пространство\\
+$ r \subseteq a \ast a : (x,y) \in r \leftrightarrow \parallel x - y \parallel \leq \delta $\\
+реф. : $\forall x \parallel x - x \parallel = 0 \leq s $\\
+симм. : $\parallel x - y \parallel = \parallel y -x  \parallel $\\
+Транзитивности нет $\parallel x - y \parallel \leq s $ и $ \parallel y - z  \parallel \leq s \Rightarrow \parallel x - z \parallel \leq s $\\
+\paragraph*{Условие}
+б)рефлексивное, антисимметричное, не транзитивное\\
+\paragraph*{Решение}
+$ r \subseteq \mathbb{R} \ast \mathbb{R} : (x,y) \in r \leftrightarrow x \leq y \leq x^2 $\\
+реф. : $\forall x (x,x) \in r$\\
+антисимметрично: $ x \leq y \leq x^2 $ и $ y \leq x \leq y^2 $ $\Rightarrow x=y$\\
+не транз. : $ (2,3) \in r, (3,8) \in r , (2,8) \not\in r$\\
+\paragraph*{Условие}
+в)рефлексивное, не симметричное, транзитивное\\
+\paragraph*{Решение}
+$ \leq $ на $ \mathbb{R} $ \\
+$ x \leq x$ \\
+$ x \leq y, y \leq z \rightarrow x \leq z$\\
+$ x \leq y \nrightarrow y \leq x$\\
+\paragraph*{Условие}
+г)антисимметричное, транзитивное, не рефлексивное\\
+\paragraph*{Решение}
+$ a \in \mathbb{R} $ \\
+$ r \subseteq  \mathbb{R} \times \mathbb{R}$ \\
+$ r=\{ (a;a) \} $\\
+
+\subsection*{$\S$ 3.7}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 3.8}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 3.9}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 3.11}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 3.12}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 3.17}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 3.19}
+\paragraph*{Условие}
+\paragraph*{Решение}
+
+\subsection*{$\S$ 3.20}
+\paragraph*{Условие}
+\paragraph*{Решение}
 
 \end{document}
