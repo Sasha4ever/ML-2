@@ -296,6 +296,8 @@ $A = \{1\}$ и $B = \{2\}$, так как, пользуясь определен
 \paragraph*{Условие}
 б) $A \times (B \times C) \neq (A \times B) \times C$
 \paragraph*{Решение} \mbox{}\\
+Например, $A=\{1\}$, $B=\{2\}$, $C=\{3\}$.\\
+$\{ \{1\}, \{ \{1\},\{ \{2\}, \{2,3\}\}\}\} \ne \{ \{\{1\}, \{1,2\} \}, \{\{\{1\}, \{1,2\} \},3\} \}$
 
 \subsection*{$\S$ 2.3}
 \paragraph*{Условие}
@@ -303,7 +305,11 @@ $A = \{1\}$ и $B = \{2\}$, так как, пользуясь определен
 а) $A \subseteq B$ и $ C \subseteq D $ $\Leftrightarrow A \times C \subseteq B \times D$
 б) $A = B$ и $ C = D $ $\Leftrightarrow A \times C = B \times D$
 \paragraph*{Решение} \mbox{}\\
-Очевидно доказывается методом от противного.
+(а) $A\times C \subseteq B\times D$ $\Leftrightarrow$ $\forall z=(a,c): a\in A$, $c\in C$ $\exists p=(b,d)$ $b\in B$, $d\in D:$ $z=p$. $\Leftrightarrow$ В силу основного свойства упорядоченной пары $\Leftrightarrow$ $\forall a\in A$, $c\in C$ $\exists b\in B$, $d\in D:$ $a=b$, $c=d$. $\Leftrightarrow$ $A \subseteq B \ \& \ C\subseteq D$.
+
+\medskip
+
+(б) $A\times C = B\times D$ $\Leftrightarrow$ $A\times C \subseteq B\times D$ $\&$ $B\times D \subseteq A\times C$. Дважды применяя пункт (а), получим, что это равносильно $A\subseteq B$ $\&$ $C\subseteq D$ $\&$ $B \subseteq A$ $\&$ $D\subseteq C$. $\Leftrightarrow$ $A=B$ $\&$ $C=D$.
 
 \subsection*{$\S$ 2.6(а, б, г)}
 \paragraph*{Условие}
@@ -312,6 +318,27 @@ a) $ ( A \cup B ) \times C = ( A \times B ) \cup ( B \times C ) $\\
 б) $ A \times ( B \cup C ) = ( A \times B ) \cup ( A \times C ) $\\
 г) $ ( A \setminus B ) \times C = ( A \times C ) \setminus ( B \times C ) $
 \paragraph*{Решение} \mbox{}\\
+(a)
+\begin{gather*}
+x \in (A \cup B) \times C \sim \exists u \exists v (u\in (A\cup B) \  \& \  v \in C\  \& \   x = (u,v)) \sim \\
+\sim  \exists u \exists v ((u\in A \vee u\in B)  \  \& \  v \in C\ \& \  x = (u,v)) \sim\\
+\sim \exists u \exists v ((u\in A\  \& \  v\in C \ \& \  x=(u,v)) \vee (u\in B\  \& \  v\in C \  \& \  x=(u,v)) \sim \\
+\sim x\in (A\times C) \cup (B\times C)
+\end{gather*}
+(б)
+\begin{gather*}
+x \in A \times (B\cup C) \sim \exists u \exists v (u\in A\ \& \ v \in (B\cup C) \  \& \   x = (u,v)) \sim \\
+\sim \exists u \exists v (u\in A\  \& \ v\in B \vee v\in C \  \& \   x = (u,v)) \sim \\
+\sim \exists u \exists v ((u\in A\ \& \ v\in B \ \& \ x=(u,v)) \vee ((u\in A \ \& \ v\in C \ \& \ x=(u,v)) \sim \\
+\sim x \in (A\times B) \cup (A\times C) 
+\end{gather*}
+(г)
+\begin{gather*}
+x \in (A\setminus B) \times C \sim \exists u \exists v (u\in A\setminus B \ \& \ v\in C \ \& \ x=(u,v)) \sim \\
+\sim \exists u \exists v (u\in A \ \& \ u\notin B \ \& \ v\in C \ \&\ x=(u,v)) \sim \\
+\sim \exists u \exists v ((u\in A \ \& \  v\in C \ \&\ x=(u,v)) \ \& \ ((u\notin B \ \& \ v\in C \ \&\ x=(u,v)) \sim \\
+\sim x\in  (A\times C)\setminus (B\times C)
+\end{gather*}
 
 \section{Отношения и функции}
 \subsection*{$\S$ 2.8(а, в)}
@@ -377,9 +404,19 @@ $\rho_R = \varnothing \Leftrightarrow \forall v \in \cup \cup R$ $\forall u$ $(u
 \subsection*{$\S$ 2.12 (б, г)}
 \paragraph*{Условие}
 Доказать, что для любых бинарных отношений:\\
-б) $(R^{-1})^{-1} = R$; \\
-г) $(R_1 \cap R_2)^{-1} = R_1^{-1} \cap R_2^{-1}$.
-\paragraph*{Решение}
+(б) $(R^{-1})^{-1} = R$; \\
+(г) $(R_1 \cap R_2)^{-1} = R_1^{-1} \cap R_2^{-1}$.
+\paragraph*{Решение\\}
+(б) $(R^{-1})^{-1} \leftrightharpoons \{u\in Pr_2(R^{-1})\times Pr_1(R^{-1})| (pr_2(u),pr_1(u))\in R^{-1}\} \sim \\
+\sim \{u\in Pr_2(R^{-1}) \times Pr_1(R^{-1})|t=(pr_2(u),pr_1(u)), (pr_2(t),pr_1(t))\in R\}\sim \\
+\sim \{u\in Pr_1(R)\times Pr_2(R)|(pr_1(u),pr_2(u))\in R\}$ $\Rightarrow$ $(R^{-1})^{-1}=R$.
+
+\medskip
+
+(г) $(R_1 \cap R_2)^{-1} \leftrightharpoons \{t\in Pr_2(R_1\cap R_2)\times Pr_1(R_1\cap R_2)|(pr_2(t),pr_1(t))\in (R_1\cap R_2)\} \sim \{t\in (Pr_2(R_1)\cap Pr_2(R_2))\times (Pr_1(R_1)\cap Pr_1(R_2))|(pr_2(t),pr_1(t))\in R_1 \ \& \ (pr_2(t),pr_1(t))\in R_2\}\sim \\
+\sim \{t\in (Pr_2(R_1)\times Pr_1(R_1)) \cap (Pr_2(R_2)\times Pr_1(R_2))|(pr_2(t),pr_1(t))\in R_1 \ \& \ (pr_2(t),pr_1(t))\in R_2\}\Rightarrow$ $(R_1\cap R_2)^{-1} = R_1^{-1}\cap R_2^{-1}$.\\
+(было использовано свойство из задачи 4(а): $(A\cap B)\times (C\cap D) = (A\times C)\cap (B\times D).$)
+
 
 \subsection*{$\S$ 2.13}
 \paragraph*{Условие}
@@ -418,8 +455,16 @@ $g\cdot f \leftrightharpoons \{t\in Pr_1(f)\times Pr_2(g)| ...\}$. $Pr_1(f)=A$, 
 г) $(A^B)^C$ и $A^{B\times C}$;\\
 д) $A^{B\cup C}$ и $A^B\times A^C$, если $B\cap C = \varnothing$.
 \paragraph*{Решение}
-а) Предъявим это соответствие: $\forall x\in A$, $y\in B:$ $(x,y)~\in~A~\times~B \leftrightarrow (y,x)\in B\times A$, то есть любой упорядоченной паре из первого векторного произведения соответствует ровно одна из второго и наоборот.\\
-б)
+Будем пользоваться теоремой Кантора-Шрёдера-Бернштейна: необходимым и достаточным условием существования биекции между множествами $X$ и $Y$ является существование пары инъекций: из $X$ в $Y$ и из $Y$ в $X$.\\	
+(а) $\forall x=(u,v) \in A\times B$ $\exists y=(v,u) \in B\times A$, причем если $x_1\ne x_2$, то соответствующие $y_1\ne y_2$. Аналогично определяется и вторая инъекция из $B\times A$ в $A\times B$. Значит, по теореме между множествами существует биекция.\\
+(б) $\forall x = (u,(v,w)) \in A\times (B\times C)$ $\exists y=((u,v),w) \in (A\times B)\times C$, причем если $x_1\ne x_2$, то соответствующие $y_1\ne y_2$ (так как различие в одной из компонент $u,v,w$ дает и различие упорядоченных пар). Аналогично определяется инъекция из $(A\times B)\times C$ в $A\times (B\times C)$. По теореме между множествами есть биекция.\\
+(в) $X^Y$ $\leftrightharpoons$ множество всех функций из $Y$ в $X$. \par
+$\forall f=f(x)=(u,v): C \to (A\times B)$ $\exists (g,h) \in A^C\times B^C$, определяемая так, что $g(x) = u$, $h(x) = v$. Такое отображение будет инъекцией, так как если $f_1\ne f_2$, то их значения отличаются хотя бы на одном элементе $z$, $f_1(z) = (u_1,v_1)$, $f_2(z)=(u_2,v_2)$, $(u_1,v_1)\ne (u_2,v_2)$. Отсюда $u_1\ne u_2 \vee v_1\ne v_2$ $\Rightarrow$ соответствующие функции $g_1$, $h_1$ не равны функциям $g_2$, $h_2$, значит и упорядоченные пары не равны. \par
+Обратно, $\forall (g,h) \in A^C\times B^C$, $g(x)=u$, $h(x)=v$, $\exists f(x) = (u,v): C \to (A\times B)$. То, что это - инъекция, доказывается аналогично. Значит, по теореме между этими множествами есть биекция.\\
+(г) $\forall f = f(g) = f(g(x)) \in (A^B)^C$ $\exists h=h(u,v) \in A^{B\times C}$: $v=x$, $u = g$, $h(g,x)=f(g(x))$. Если $f_1\ne f_2$, то и $h_1\ne h_2$.\par
+Обратно, $\forall h=h(u,v) \in A^{B\times C}$ $\exists f=f(g)=f(g(x)) \in (A^B)^C$: $x=v$, $g(x)=u$, $f(g(x))= h(u,v)$. Аналогично это будет инъекция. По теореме существует биекция.\\
+(д) $\forall f=f(x) \in A^{B\cup C}$ $\exists (g,h)\in A^B\times A^C$: $g(x)=f(x)$, $h(x)=f(x)$, $x\in A\cup B \Rightarrow x\in A \vee x\in B$ (можно взять ограничения так определенных функций на соответствующие множества). Если $f_1\ne f_2$, то есть $\exists x: f_1(x)\ne f_2(x)$, то $(g_1(x),h_1(x))\ne (g_2(x),h_2(x))$. Значит, это инъекция. \par
+Обратно, $\forall (g,h)=(g(x),g(y))\in A^B\times A^C$ $\exists f=f(z)\in A^{B\cup C}$: $f(x)=g(x)$, если $x\in A\setminus B$, $f(x)=h(x)$, если $x\in B\setminus A$. ?????
 
 \subsection*{$\S$ 2.31(а)}
 \paragraph*{Условие}
@@ -487,6 +532,12 @@ f^{-1}[A\cup B] \leftrightharpoons \{v\in Pr_2(f^{-1})|\exists p(p\in A\cup B) \
 f^{-1}[A\cap B] \leftrightharpoons \{v\in Pr_2(f^{-1})|\exists p(p\in A\cap B) \ \& \ (p,v) \in f^{-1}\}\\
 \exists p(p\in A\cap B) \ \& \ ((p,v) \in f^{-1}) \sim \exists p(p\in A \ \& \ p\in B) \ \& \ ((p,v) \in f^{-1}) \sim \\
 \sim \exists p(p\in A) \ \& \ ((p,v) \in f^{-1}) \ \& \ (p\in B)  \Rightarrow f^{-1}[A\cap B] = f^{-1}[A] \cap f^{-1}[B]
+\end{gather*}
+(д)
+\begin{gather*}
+ f^{-1}[A\setminus B] = \{v\in Pr_2(f^{-1})|\exists p(p\in A\setminus B) \ \& \ (p,v)\in f^{-1} \\
+\exists p(p\in A\setminus B) \ \& \ (p,v)\in f^{-1} \sim \exists p(p\in A \ \& \ p\notin B) \ \& \ (p,v)\in f^{-1} \sim \\
+\sim \exists p(p\in A) \ \& \ (p,v)\in f^{-1} \ \& \ p\notin B \Rightarrow f^{-1}[A\setminus B] =  f^{-1} (A)\setminus f^{-1}(B)
 \end{gather*}
 
 \section{Мощности множеств}
