@@ -65,6 +65,8 @@ citecolor={citecolor}, urlcolor={urlcolor}
 
 \graphicspath{ {./} }
 
+\DeclareMathOperator*{\mycup}{\cup}
+\DeclareMathOperator*{\mycap}{\cap}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -818,7 +820,7 @@ $(a - b) \ in \mathbb{Q} (b - c) \ in \mathbb{Q} \rightarrow (a - c) - (a - b) +
 \paragraph*{Условие}
 Доказать, что сущесвуют взаимоодназначные соотвествия между классом всех разбиений множества а и семествой всех отношений эквивалентности на a
 \paragraph*{Доказательство}
-разбиение $\{a_i\}_{i\in\mathbb{I}}$ ставит в соответствие $(x, y) \in r \leftrightarrow \exists i: x \in a_i , y \in a_i$
+Разбиение $\{a_i\}_{i\in\mathbb{I}}$ ставит в соответствие $(x, y) \in r \leftrightarrow \exists i: x \in a_i , y \in a_i$
 
 \subsection*{$\S$ 3.19}
 \paragraph*{Условие}
@@ -826,9 +828,24 @@ $(a - b) \ in \mathbb{Q} (b - c) \ in \mathbb{Q} \rightarrow (a - c) - (a - b) +
 
 \subsection*{$\S$ 3.20}
 \paragraph*{Условие}
+Доказать, что пересечение системы эквивалентностей на а есть эквивалентность.
 \paragraph*{Решение}
-
-
+Рассмотрим $\mycup\limits_{i \in X} r_i $\\
+$\forall x \in a  \forall i \in X (x,x) \in r_i \rightarrow (x,x) \in \mycap\limits_{i \in X} r_i -$ - рефлексивность\\
+$(x,y) \in \mycap\limits_{i \in X} r_i \rightarrow \forall i \in X (x,y) \in r_i \rightarrow \forall i \in X (y,x) \in r_i \rightarrow (y,x) \in \mycap\limits_{i \in X} r_i$ - симметричность\\
+\begin{equation*}
+\begin{cases} 
+(x,y) \in  \mycap\limits_{i \in X} r_i \\
+(y,x) \in  \mycap\limits_{i \in X} r_i \\
+\end{cases} \rightarrow
+\begin{cases} 
+\forall i in X (x,y) \in   r_i \\
+\forall i in X (y,z) \in   r_i \\
+\end{cases} 
+\rightarrow
+\forall i \in X (x,z) \in r_i \rightarrow (x,z) \in \mycap\limits_{i \in X} r_i
+\end{equation*}
+транзитивность
 \section{Упорядоченные множества и ординальные числа}
 \subsection*{$\S$ 3.30}
 \paragraph*{Условие}
