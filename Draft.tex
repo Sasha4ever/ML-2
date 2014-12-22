@@ -100,8 +100,8 @@ $ \Rightarrow \forall t ( t \in \{ 1,2,3 \} \Leftrightarrow t \in \{\{1, 2\}, \{
 Доказать, что $\exists$ лишь одно множество, не имеющее элементов.
 \paragraph*{Доказательство}
 Пусть $\exists$ два множества X и $X_0$, не имеющих элементов и такие, что $X \not= X_0$\\
-$ \Rightarrow \exists t ( t \in X \Rightarrow  t \not\in X_0 )$\\
-Противоречие так как $\nexists t \in$ X.
+$ \Rightarrow \exists t ( t \in X \Rightarrow  t \not\in X_0 )$ или $\exists t ( t \in X_0 \Rightarrow  t \not\in X )$ \\
+Противоречие так как $\nexists t \in X$ и $\nexists t \in X_0$.
 
 \subsection*{$\S$ 1.8}
 \paragraph*{Условие}
@@ -225,12 +225,12 @@ a) $(A_1 \cup ... \cup A_n) \bigtriangleup (B_1 \cup ... \cup B_n) \subseteq (A_
  Пусть верно для $\forall n < k$\\
  \textbf{Шаг индукции}\\
  Докажем для k+1\\
- $(A_1 \cup ... \cup A_k+1) \bigtriangleup (B_1 \cup ... \cup B_k+1) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_k+1 \bigtriangleup B_k+1) $\\
+ $(A_1 \cup ... \cup A_{k+1}) \bigtriangleup (B_1 \cup ... \cup B_{k+1}) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_{k+1} \bigtriangleup B_{k+1}) $\\
  пусть $ A_0 = A_1 \cup ... \cup A_k и B_0 = B_1 \cup ... \cup B_k$\\
  $(A_1 \cup ... \cup A_{k+1}) \bigtriangleup (B_1 \cup ... \cup B_{k+1}) \Leftrightarrow (A_0 \cup A_{k+1}) \bigtriangleup (B_0 \cup B_{k+1}) \subseteq $ \\
 $ \subseteq (A_0 \bigtriangleup B_0) \cup (A_k \bigtriangleup B_k)$\\
 $(A_0 \bigtriangleup B_0) \subseteq  (A_1 \bigtriangleup B_1) \cup ... \cup (A_k \bigtriangleup B_k)$\\
-$\Rightarrow (A_1 \cup ... \cup A_k+1) \bigtriangleup (B_1 \cup ... \cup B_k+1) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_k+1 \bigtriangleup B_k+1) $
+$\Rightarrow (A_1 \cup ... \cup A_{k+1}) \bigtriangleup (B_1 \cup ... \cup B_{k+1}) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_{k+1} \bigtriangleup B_{k+1}) $
 
 \paragraph*{Условие}
 б) $(A_1 \cap ... \cap A_n) \bigtriangleup (B_1 \cap ... \cap B_n) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_n \bigtriangleup B_n) $
@@ -243,12 +243,12 @@ $\Rightarrow (A_1 \cup ... \cup A_k+1) \bigtriangleup (B_1 \cup ... \cup B_k+1) 
  Пусть верно для $\forall n < k$\\
  \textbf{Шаг индукции}\\
  Докажем для k+1\\
- $(A_1 \cap ... \cap A_k+1) \bigtriangleup (B_1 \cap ... \cap B_k+1) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_k+1 \bigtriangleup B_k+1) $\\
+ $(A_1 \cap ... \cap A_{k+1}) \bigtriangleup (B_1 \cap ... \cap B_{k+1}) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_{k+1} \bigtriangleup B_{k+1}) $\\
  пусть $ A_0 = A_1 \cap ... \cap A_k и B_0 = B_1 \cap ... \cap B_k$\\
  $(A_1 \cap ... \cap A_{k+1}) \bigtriangleup (B_1 \cap ... \cap B_{k+1}) \Leftrightarrow (A_0 \cap A_{k+1}) \bigtriangleup (B_0 \cap B_{k+1}) \subseteq $ \\
 $ \subseteq (A_0 \bigtriangleup B_0) \cup (A_k \bigtriangleup B_k)$\\
 $(A_0 \bigtriangleup B_0) \subseteq  (A_1 \bigtriangleup B_1) \cup ... \cup (A_k \bigtriangleup B_k)$\\
-$\Rightarrow (A_1 \cap ... \cap A_k+1) \bigtriangleup (B_1 \cap ... \cap B_k+1) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_k+1 \bigtriangleup B_k+1) $\\
+$\Rightarrow (A_1 \cap ... \cap A_{k+1}) \bigtriangleup (B_1 \cap ... \cap B_{k+1}) \subseteq (A_1 \bigtriangleup B_1) \cup ... \cup (A_{k+1} \bigtriangleup B_{k+1}) $\\
 
 \subsection*{$\S$ 1.17}
 \paragraph*{Условие}
@@ -277,8 +277,8 @@ $ \setminus =  \setminus$
 a) $\setminus$ через $\cap$ и $\cup $\\
 б) $\cup$ через $\cap$ и $\setminus $
 \paragraph*{Решение} \mbox{}\\
-a)Пусть можно, тогда подставим в это определение множества A и A - их симметрическая разница равна $\varnothing$, но объединение пересечение могут дать только само A\\
-б)$\cap$ и $\setminus $ размер множества после выполенеия данных операций не больше, чем максимальное из множество. Но объединение двух множеств дает множество размером суммы размеров. Значит размеры будут разные. $\rightarrow$ нельзя определить.
+a)Пусть можно, тогда подставим в это определение непустое множества A и A - их симметрическая разница равна $\varnothing$, но объединение пересечение могут дать только само A\\
+б)Возьмем 2 конечных непересекащихся множества после выполенеия операций $\cap$ и $\setminus $ размер множества не больше, чем максимальное из множество. Но объединение двух множеств дает множество размером суммы размеров. Значит размеры будут разные. $\rightarrow$ нельзя определить.
 
 \subsection*{$\S$ 1.20}
 \paragraph*{Условие}
@@ -304,10 +304,10 @@ $\{ \{1\}, \{ \{1\},\{ \{2\}, \{2,3\}\}\}\} \ne \{ \{\{1\}, \{1,2\} \}, \{\{\{1\
 \subsection*{$\S$ 2.3}
 \paragraph*{Условие}
 Доказать, что если A, B, C и D не пусты, то:\\
-а) $A \subseteq B$ и $ C \subseteq D $ $\Leftrightarrow A \times C \subseteq B \times D$
+а) $A \subseteq B$ и $ C \subseteq D $ $\Leftrightarrow A \times C \subseteq B \times D$\\
 б) $A = B$ и $ C = D $ $\Leftrightarrow A \times C = B \times D$
 \paragraph*{Решение} \mbox{}\\
-(а) $A\times C \subseteq B\times D$ $\Leftrightarrow$ $\forall z=(a,c): a\in A$, $c\in C$ $\exists p=(b,d)$ $b\in B$, $d\in D:$ $z=p$. $\Leftrightarrow$ В силу основного свойства упорядоченной пары $\Leftrightarrow$ $\forall a\in A$, $c\in C$ $\exists b\in B$, $d\in D:$ $a=b$, $c=d$. $\Leftrightarrow$ $A \subseteq B \ \& \ C\subseteq D$.
+(а) $A\times C \subseteq B\times D$ $\Leftrightarrow$ $\forall z=(a,c): a\in A$, $c\in C$ $\exists p=(b,d)$ $b\in B$, $d\in D:$ $z=p$. $\Leftrightarrow$ (В силу основного свойства упорядоченной пары) $\forall a\in A$, $c\in C$ $\exists b\in B$, $d\in D:$ $a=b$, $c=d$. $\Leftrightarrow$ $A \subseteq B \ \& \ C\subseteq D$.
 
 \medskip
 
@@ -627,8 +627,8 @@ $\Rightarrow$ оно не менее чем счетно. Но по доказа
 Доказать, что множество всех конечных последовательностей, составленных из элементов некотрого счетного множества, есть счетное множество.
 \paragraph*{Доказательство}
 Докажем, что множество последовательностей длины n счетно.\\
-Используя 4.15 Г мы знаем, что счетно * счетно = счетно \\
-$ \Rightarrow $ счетное$^{n} $ = счетное.\\
+Используя 4.15 Г мы знаем, что $\aleph_0 * \aleph_0 = \aleph_0$\\
+$ \Rightarrow $ $\aleph_0^{n} = \aleph_0 $.\\
 Кол-во последовательностей конченой длиный счетно $\Rightarrow$ множество всех последедовательностей конечной длинны тоже счетно.
 
 
@@ -814,7 +814,7 @@ $ x \parallel y \wedge  y \parallel z \rightarrow x \parallel z $\\
 \paragraph*{Решение}
 a - a = 0 $ \in \mathbb{Q}$\\
 a - b $ \in \mathbb{Q} \rightarrow (b - a)=-(a - b) \in \mathbb{Q}$\\
-$(a - b) \ in \mathbb{Q} (b - c) \ in \mathbb{Q} \rightarrow (a - c) - (a - b) + (b - c) \in \mathbb{Q}$ 
+$(a - b) \in \mathbb{Q} (b - c)  \in \mathbb{Q} \rightarrow (a - c) - (a - b) + (b - c) \in \mathbb{Q}$ 
 
 \subsection*{$\S$ 3.17}
 \paragraph*{Условие}
@@ -830,7 +830,7 @@ $(a - b) \ in \mathbb{Q} (b - c) \ in \mathbb{Q} \rightarrow (a - c) - (a - b) +
 \paragraph*{Условие}
 Доказать, что пересечение системы эквивалентностей на а есть эквивалентность.
 \paragraph*{Решение}
-Рассмотрим $\mycup\limits_{i \in X} r_i $\\
+Рассмотрим $\mycap\limits_{i \in X} r_i $\\
 $\forall x \in a  \forall i \in X (x,x) \in r_i \rightarrow (x,x) \in \mycap\limits_{i \in X} r_i -$ - рефлексивность\\
 $(x,y) \in \mycap\limits_{i \in X} r_i \rightarrow \forall i \in X (x,y) \in r_i \rightarrow \forall i \in X (y,x) \in r_i \rightarrow (y,x) \in \mycap\limits_{i \in X} r_i$ - симметричность\\
 \begin{equation*}
@@ -839,8 +839,8 @@ $(x,y) \in \mycap\limits_{i \in X} r_i \rightarrow \forall i \in X (x,y) \in r_i
 (y,x) \in  \mycap\limits_{i \in X} r_i \\
 \end{cases} \rightarrow
 \begin{cases} 
-\forall i in X (x,y) \in   r_i \\
-\forall i in X (y,z) \in   r_i \\
+\forall i \in X (x,y) \in   r_i \\
+\forall i \in X (y,z) \in   r_i \\
 \end{cases} 
 \rightarrow
 \forall i \in X (x,z) \in r_i \rightarrow (x,z) \in \mycap\limits_{i \in X} r_i
@@ -853,7 +853,7 @@ a)Доказать,что всякое частично упорядоченно
 б)Доказать, что наибольший (наименьший) элемент частично упорядоченного множества является единственным максимальным(минимальным) элементом.
 в)Построить пример частично упорядоченного множества, имеющего точно один минимальный элемент, но не имеющего наименьшего элемента.
 \paragraph*{Решение}
-а) и б) доказюватся от противного.
+а) и б) доказываются от противного.
 в) Возьмем множество всех целых чисел, где нет наименьшего и минимального элемента и добавим к этому множеству элемент а, котороый ни с одним из остальных не сравним, что делает его минимальным, но не наименьшим. Получаем множество с 1 минимальным и без наименьших.
 \subsection*{$\S$ 3.39}
 \paragraph*{Условие}
@@ -898,13 +898,6 @@ a) $ \mathscr{N}^2 $\\
 \paragraph*{Условие} Доказать, что любое подмножество множества P(A), частично упорядоченное по включению, имеет точную верхнюю грань и точную нижнюю грань.
 \paragraph*{Решение}
 
-\subsection*{$\S$ 5.13}
-\paragraph*{Условие}
-\paragraph*{Решение}
-
-\subsection*{$\S$ 5.14}
-\paragraph*{Условие}
-\paragraph*{Решение}
 
 \subsection*{$\S$ 5.38}
 \paragraph*{Условие}
@@ -927,10 +920,6 @@ a) $ \mathscr{N}^2 $\\
 \paragraph*{Решение}
 
 \subsection*{$\S$ 5.51}
-\paragraph*{Условие}
-\paragraph*{Решение}
-
-\subsection*{$\S$ 5.66}
 \paragraph*{Условие}
 \paragraph*{Решение}
 
