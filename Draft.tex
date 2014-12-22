@@ -393,15 +393,24 @@ R\cdot R \rightleftharpoons \{t\in \mathbb{D}\times \mathbb{D} | \exists u=(u_1,
 \paragraph*{Условие}
 Доказать, что:\\
 (а) $\delta_R = \varnothing \Leftrightarrow R=\varnothing \Leftrightarrow \rho_R=\varnothing$;\\
-(в) $\delta_{R_1\cdot R_2} = R_1^{-1} (\rho_{R_1} \cap \delta_{R_2})$.
+(в) $\delta_{R_1\cdot R_2} = R_2^{-1} (\rho_{R_2} \cap \delta_{R_1})$.
 \paragraph*{Решение}
 (а) $\delta_R = \varnothing \Leftrightarrow \forall u \in  \cup \cup R$ $\forall v$ $(u,v)\notin R$ $\Leftrightarrow R=\varnothing$\par
 $\rho_R = \varnothing \Leftrightarrow \forall v \in \cup \cup R$ $\forall u$ $(u,v)\notin R$ $\Leftrightarrow R=\varnothing$\par
 
 \bigskip
 
-(в) $x\in \delta_{R_1\cdot R_2} \Leftrightarrow \exists y:$ $(x,y)\in R_1\cdot R_2$
- $\Leftrightarrow \exists y: \exists u \exists v (u\in R_1 \ \& \ v\in R_2 \ \& \ x=u_1 \ \& \ u_2 = v_1 \ \& \ v_2 = y)$ $\Leftrightarrow$ $\exists y \exists z=u_2=v_1: (x=u_1,z)\in~R_1) \ \& \ (z,y=v_2)\in R_2$ $\Leftrightarrow$ $\exists z: (x,z)\in R_1$ $\&$ $z\in \delta_{R_2}$ $\Leftrightarrow$ $\exists z: (z,x)\in R_1^{-1}$ $\&$ $z\in \rho_{R_1}$ $\&$ $z\in \delta_{R_2}$ $\Leftrightarrow$ $x\in R_1^{-1} (\rho_{R_1} \cap \delta_{R_2})$.
+(в) При решении предполагается, что сначала применяется $R_2$, потом $R_1$.
+\begin{gather*}
+x\in \delta_{R_1\cdot R_2} \Leftrightarrow \\
+\Leftrightarrow \exists y: (x,y)\in R_1\cdot R_2 \Leftrightarrow \\
+\Leftrightarrow \exists y: \exists u \exists v ((u\in R_1) \ \& \ (v\in R_2) \ \& \ (x=pr_1(v)) \ \& \ (pr_2(v) = pr_1(u ))\ \& \ (pr_2(u) = y)) \Leftrightarrow \\
+\Leftrightarrow \exists y \exists u \exists v \exists z: (u\in R_1) \ \& \ (v\in R_2) \ \& \ (z=pr_2(v)=pr_1(u)) \ \& \ \\
+\& \ (x=pr_1(v)) \ \& \ ((x,z)\in R_2) \ \& \ (y=pr_2(u)) \ \& \ ((z,y)\in R_1)  \Leftrightarrow \\
+\Leftrightarrow \exists z: ((x,z)\in R_2) \ \& \ (z\in \delta_{R_1}) \ \& \ (z\in \rho_{R_2}) \Leftrightarrow \\
+\Leftrightarrow \exists z: ((z,x)\in R_2^{-1}) \ \& \ (z\in \delta_{R_1}) \ \& \ (z\in \rho_{R_2}) \Leftrightarrow \\
+\Leftrightarrow x\in R_2^{-1} (\rho_{R_2} \cap \delta_{R_1}).
+\end{gather*}
  
 \subsection*{$\S$ 2.12 (б, г)}
 \paragraph*{Условие}
@@ -443,9 +452,14 @@ $\rho_R = \varnothing \Leftrightarrow \forall v \in \cup \cup R$ $\forall u$ $(u
 
 \subsection*{$\S$ 2.22}
 \paragraph*{Условие}
-Доказать, что если $f$ есть функция из $A$ в $B$ и $g$ есть функция из $B$ в $C$, то $f\cdot g$ есть функция из $A$ в $C$. (????Имелось в виду $g\cdot f$ - функция из $A$ в $C$????)
+Доказать, что если $f$ есть функция из $A$ в $B$ и $g$ есть функция из $B$ в $C$, то $g\cdot f$ есть функция из $A$ в $C$.
 \paragraph*{Решение}
-$g\cdot f \leftrightharpoons \{t\in Pr_1(f)\times Pr_2(g)| ...\}$. $Pr_1(f)=A$, $Pr_2(g)=C$ $\Rightarrow$ $g \cdot f: A\to C$. 
+Проверим \textit{всюдуопределенность и прямую однозначность} данной суперпозиции отношений. \par
+$\forall x\in Pr_1(f)$ $\exists ! y\in Pr_2(f): f(x)=y$ в силу всюдоопределенности и прямой однозначности $f$. $Pr_2(f) \subseteq B$, значит, $\exists ! z\in Pr_2(g): g(y)=z$ в силу всюдоопределенности и прямой однозначности $g$. Получаем, что
+\begin{gather*}
+\forall x \in Pr_1(f) \exists ! z\in Pr_2(g): g(f(x))=z
+\end{gather*}
+Значит, суперпозиция является всюдуопределенным и прямо однозначным бинарным отношением, то есть функцией. Причем это будет функция $A\to C$, так как $A\subseteq Pr_1(f)$, $C\subseteq Pr_2(g)$. \par
 
 
 \subsection*{$\S$ 2.25(а-д)}
