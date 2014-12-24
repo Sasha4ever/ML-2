@@ -570,8 +570,10 @@ f^{-1}[A\cap B] \leftrightharpoons \{v\in Pr_2(f^{-1})|\exists p(p\in A\cap B) \
 2)Если $ A \backsim B $, то $ B \backsim A $ (симметричность)\\
 3)Если $ A \backsim B $ и $ B \backsim С $, то $ A \backsim С $(транзетивность)
 \paragraph*{Решение\\}
-1) Рефлексивность: $ A = A \sim A \subseteq A \wedge A \subseteq A$, но последнее всегда истинно в силу рефлексивности $\subseteq$\\ 
-2) Симметричность $A_x = A_y \sim A_x \subseteq A_y \wedge A_y \subseteq A_x \sim A_y \subseteq  A_x \wedge A_x \subseteq A_y \sim A_y = A_x$
+1) Рефлексивность: $ A \sim A \Leftrightarrow A \subseteq A \wedge A \subseteq A$, но последнее всегда истинно в силу рефлексивности $\subseteq$\\ 
+2) Симметричность: $A \sim B \Leftrightarrow A \subseteq B \wedge B \subseteq A \Leftrightarrow B \subseteq  A \wedge A \subseteq B \Leftrightarrow B \sim A$\\
+3)$ A \sim B \wedge B \sim C \Leftrightarrow A \subseteq B \wedge B \subseteq A \wedge B \subseteq C \wedge C \subseteq B$, откуда в силу транзитивности $\subseteq$ следует $A \subseteq C \wedge C \subseteq A$, что и требовалось
+
 \subsection*{$\S$ 4.5}
 \paragraph*{Условие}
 Доказать, что:\\
@@ -845,8 +847,24 @@ $(a - b) \in \mathbb{Q} (b - c)  \in \mathbb{Q} \rightarrow (a - c) - (a - b) + 
 
 \subsection*{$\S$ 3.19}
 \paragraph*{Условие}
+Пусть $ f: A \rightarrow B $ - произвольная функция. Положим\\
+$ Q = \{\left\langle x, y \right\rangle \mid f(x)=f(y)  \}$\\
+Доказать, что $Q$ является эквивалентностью на A и для отображения $ f $ существует разложение\\
+$ f = \varepsilon \cdot f_1 $, \\
+где $ \varepsilon $ - естевственное отображение A на $A \setminus Q = \{ [x]_Q \mid x \in A\}$, т.е. \\
+$ \varepsilon (x) =[x]_Q , f_1 $ - взаимоодназначное соответсвие $ A \setminus Q$ и $f(A)$
 \paragraph*{Решение}
-
+Докажем, что $ Q $ является эквивалентностью.\\
+Надо доказать, что оно рефлексивно, симметрично и транзитивно.\\
+Рефлексивность: $ \forall x ( x \in A \Rightarrow (x,x) \in Q )$\\
+Симметричность: $ \forall x \forall y ((x, y) \in Q \Rightarrow (y, x) \in Q)$\\
+Транзитивность: $ \forall x \forall y \forall z ((x, y) \in Q \wedge (y, z) \in Q \Rightarrow (x, z) \in Q)$\\
+Докажем, что сушествует разложение. Построим множество $A_1$, так что:\\
+$ A_1 = \{  x | (x \in A \wedge ( \nexists y \left\langle x, y \right\rangle \in Q ) ) \vee ( x = \{ y \mid \exists ( y \neq z \wedge \left\langle z, y \right\rangle \in q )  \} ) \} $\\
+$  \varepsilon : A \rightarrow A_1 $\\
+$ f_1: A_1 \rightarrow B$\\
+Отсюда очевидно, что $ f_1 $ взаимооднозначное.
+ 
 \subsection*{$\S$ 3.20}
 \paragraph*{Условие}
 Доказать, что пересечение системы эквивалентностей на а есть эквивалентность.
